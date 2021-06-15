@@ -4,7 +4,7 @@ import Onglet from "./components/Onglet.jsx"
 import Add from './components/Add.jsx'
 import List from './components/List'
 import Pay from './components/Pay'
-
+import Card from './components/Card'
 
 class App extends React.Component {
   constructor() {
@@ -47,9 +47,9 @@ class App extends React.Component {
         <br />
         {this.state.activeTab === 'add' && <Add onAdd={this.addItem} />}
 
-        {this.state.activeTab === 'list' && <List />}
+        {this.state.activeTab === 'list' && <List items={this.state.items} />}
 
-        {this.state.activeTab === 'pay' && <Pay />}
+        {this.state.activeTab === 'pay' && <Pay items={this.state.items}/>}
 
       </div>
     )
